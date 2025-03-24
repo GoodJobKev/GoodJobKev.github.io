@@ -4,43 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kevin Cesari's Portfolio Website">
+    <meta name="keywords" content="portfolio, web development, software engineer">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <link rel="stylesheet" type="text/css" href="default.css">
 
-    <title>Kevin Cesari</title>
+    <title>Kevin Cesari | Portfolio</title>
 </head>
 
 <body>
-    <section class="s1">
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">KC</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="s1">
         <div class="main-container">
-            <div class="greeting-wrapper">
-               <h1>Hi, my name is Kevin Cesari</h1>
-               <h5>This website is under construction. Please check back at a later date!</h5>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1>Hi, I'm Kevin Cesari</h1>
+                    <h2>Software Engineer</h2>
+                    <p>I create elegant solutions to complex problems</p>
+                    <div class="cta-buttons">
+                        <a href="#portfolio" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Add your profile image here -->
+                </div>
             </div>
         </div>
     </section>
     
-    <section class="s2">
+    <section id="about" class="s2">
         <div class="main-container">
-            About
+            <h2 class="section-title">About Me</h2>
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <p>I am a passionate software engineer with expertise in building scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.</p>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <ul class="skills-list">
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <!-- Add more skills as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="s1">
+    <section id="portfolio" class="s1">
         <div class="main-container">
-            Portfolio
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-grid">
+                <!-- Portfolio items will be added here -->
+                <div class="portfolio-item">
+                    <div class="portfolio-content">
+                        <h3>Project 1</h3>
+                        <p>Description of your first project</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
         </div>
     </section>
 
-    <section class="s2">
+    <section id="contact" class="s2">
         <div class="main-container">
-            Contact
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
+    <footer>
+        <div class="main-container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p>&copy; 2024 Kevin Cesari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -61,12 +61,32 @@ html, body
     color: var(--textColor);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.nav-links a::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accentColor);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover
 {
     color: var(--accentColor);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after
+{
+    width: 100%;
 }
 
 /* Sections */
@@ -312,18 +332,107 @@ footer
     color: var(--accentColorLight);
 }
 
+/* Mobile Navigation Button */
+.mobile-nav-toggle
+{
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger
+{
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background: var(--textColor);
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after
+{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--textColor);
+    transition: all 0.3s ease;
+}
+
+.hamburger::before
+{
+    transform: translateY(-8px);
+}
+
+.hamburger::after
+{
+    transform: translateY(8px);
+}
+
+/* Hamburger Animation */
+.mobile-nav-toggle.active .hamburger
+{
+    background: transparent;
+}
+
+.mobile-nav-toggle.active .hamburger::before
+{
+    transform: rotate(45deg);
+}
+
+.mobile-nav-toggle.active .hamburger::after
+{
+    transform: rotate(-45deg);
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px)
 {
-    .hero-wrapper
+    .mobile-nav-toggle
     {
-        grid-template-columns: 1fr;
-        text-align: center;
+        display: block;
     }
 
     .nav-links
     {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--mainColor);
+        padding: 6rem 2rem 2rem;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 4px var(--shadowColor);
+    }
+
+    .nav-links.active
+    {
+        right: 0;
+    }
+
+    .nav-links a
+    {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    .nav-links a:hover
+    {
+        transform: translateX(5px);
+    }
+
+    .hero-wrapper
+    {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
     .hero-content h1

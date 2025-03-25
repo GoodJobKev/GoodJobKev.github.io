@@ -46,20 +46,25 @@ html, body
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accentColor);
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    position: relative;
 }
 
 .logo-text
 {
     white-space: nowrap;
+    display: inline-block;
 }
 
 .cursor
 {
     margin-left: 0;
     font-weight: 100;
+    will-change: opacity;
     animation: blink 1s step-end infinite;
+    position: relative;
+    display: inline-block;
 }
 
 @keyframes blink {
@@ -521,6 +526,11 @@ footer
     .cta-buttons
     {
         justify-content: center;
+    }
+
+    .logo {
+        display: inline-flex;
+        align-items: center;
     }
 }
 

@@ -516,11 +516,22 @@ footer
         grid-template-columns: 1fr;
         text-align: center;
         padding-top: 6rem;
+        gap: 2rem;
     }
 
     .hero-content h1
     {
         font-size: 2.5rem;
+    }
+
+    .hero-image {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
     }
 
     .cta-buttons
@@ -544,6 +555,10 @@ footer
     .section-title
     {
         font-size: 2rem;
+    }
+
+    .hero-image {
+        max-width: 220px;
     }
 }
 

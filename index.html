@@ -20,7 +20,10 @@
 <body>
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">KC</div>
+            <div class="logo">
+                <span class="logo-text"></span>
+                <span class="cursor">|</span>
+            </div>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
                 <span class="hamburger"></span>
             </button>
@@ -145,6 +148,73 @@
                 mobileNavToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             });
+        });
+
+        // Typewriter effect
+        const firstName = "Kevin";
+        const lastNameMistake = "Cesari";
+        const lastName = "Cesari";
+        const logoText = document.querySelector('.logo-text');
+        let charIndex = 0;
+        let currentPhase = 'firstName';
+        
+        function type() {
+            switch(currentPhase) {
+                case 'firstName':
+                    if (charIndex < firstName.length) {
+                        logoText.textContent += firstName.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, 80);
+                    } else {
+                        charIndex = 0;
+                        currentPhase = 'space';
+                        setTimeout(type, 500);
+                    }
+                    break;
+                    
+                case 'space':
+                    logoText.textContent += " ";
+                    currentPhase = 'lastNameMistake';
+                    setTimeout(type, 80);
+                    break;
+                    
+                case 'lastNameMistake':
+                    if (charIndex < lastNameMistake.length) {
+                        logoText.textContent += lastNameMistake.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, 80);
+                    } else {
+                        charIndex = 0;
+                        currentPhase = 'backspace';
+                        setTimeout(type, 1000); // Pause before backspacing
+                    }
+                    break;
+                    
+                case 'backspace':
+                    if (charIndex < 3) {
+                        logoText.textContent = logoText.textContent.slice(0, -1);
+                        charIndex++;
+                        setTimeout(type, 60);
+                    } else {
+                        charIndex = 3;
+                        currentPhase = 'correction';
+                        setTimeout(type, 200);
+                    }
+                    break;
+                    
+                case 'correction':
+                    if (charIndex < lastName.length) {
+                        logoText.textContent += lastName.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(type, 100);
+                    }
+                    break;
+            }
+        }
+
+        // Start typing animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(type, 500); // Delay before starting
         });
     </script>
 </body>

@@ -525,8 +525,10 @@ footer
     }
 
     .hero-image {
+        width: 100%;
         max-width: 280px;
         margin: 0 auto;
+        padding: 0 1rem;
     }
 
     .hero-image img {
@@ -562,8 +564,16 @@ footer
     }
 }
 
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .hero-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     border-radius: 50%;
     box-shadow: 
@@ -571,6 +581,8 @@ footer
         0 8px 16px rgba(46, 125, 50, 0.08),
         0 16px 32px rgba(46, 125, 50, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
 }
 
 .hero-image img:hover {

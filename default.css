@@ -622,8 +622,6 @@ footer
         0 8px 16px rgba(46, 125, 50, 0.08),
         0 16px 32px rgba(46, 125, 50, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
 }
 
 .hero-image img:hover {

@@ -500,9 +500,37 @@ footer
         width: 70%;
         height: 100vh;
         background: var(--mainColor);
-        padding: 6rem 1rem 2rem;
+        padding: 6rem 2rem 2rem;
         transition: right 0.3s ease;
         box-shadow: -2px 0 4px var(--shadowColor);
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid var(--borderColor);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        transform: translateX(5px);
+        color: var(--accentColor);
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .hero-wrapper {
@@ -556,19 +584,6 @@ footer
     .logo {
         display: inline-flex;
         align-items: center;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-links a {
-        font-size: 1.2rem;
-        padding: 1rem 0;
-    }
-
-    .nav-links a:hover {
-        transform: translateX(5px);
     }
 
     .s1, .s2 {
